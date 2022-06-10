@@ -3,6 +3,7 @@ import json
 def main():
     with open("./stories.json", "r",encoding="utf-8") as f:
         question_json = json.loads(f.read())
+        print(len(question_json))
         while True:
             new_title = input("title: ")
             new_content = input("content: ")
@@ -12,6 +13,7 @@ def main():
                 "title": new_title,
                 "content": new_content
             })
+
     with open("./stories.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(question_json, indent=2, ensure_ascii=False))
     
